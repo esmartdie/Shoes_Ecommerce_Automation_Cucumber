@@ -1,21 +1,17 @@
 package utility;
 
-import org.junit.After;
-import org.junit.Before;
-import org.openqa.selenium.chrome.ChromeOptions;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 
-public class Hooks {
-
-    public static BrowserDriver driver;
-    public static ChromeOptions options;
+public class Hooks extends BrowserDriver{
 
     @Before
     public void setUp(){
-        driver = new BrowserDriver();
+        new BrowserDriver();
     }
 
     @After
     public void tearDown(){
-        driver.close();
+        BrowserDriver.close();
     }
 }
