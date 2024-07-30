@@ -13,11 +13,11 @@ import java.time.Duration;
 public class SignInPage {
     private WebDriver driver;
 
-    @FindBy(xpath="\"//*[@id=\\\"usr\\\"]\"")
+    @FindBy(id="usr")
     private WebElement usernameField;
     @FindBy(xpath="//*[@id=\"pwd\"]")
     private WebElement passwordField;
-    @FindBy(xpath="\"//*[@id=\\\"second_form\\\"]/input\"")
+    @FindBy(xpath="//*[@id=\"second_form\"]/input")
     private WebElement loginButton;
     @FindBy(xpath="//*[@id=\"NewRegistration\"]")
     private WebElement registrationButton;
