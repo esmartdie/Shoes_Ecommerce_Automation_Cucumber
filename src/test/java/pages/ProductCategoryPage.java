@@ -27,4 +27,8 @@ public class ProductCategoryPage {
         return driver.getCurrentUrl();
     }
 
+    public void formalShowsCollectionClick(){
+        formalShowsCollection.click();
+    }
+
 }
