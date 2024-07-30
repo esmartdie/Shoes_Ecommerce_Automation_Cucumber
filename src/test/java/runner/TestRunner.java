@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src/test/java/features/HomePage.feature"},
+        features = {"src/test/java/features/NewUser.feature"},
         dryRun = false,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         monochrome = true,

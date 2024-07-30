@@ -31,12 +31,13 @@ public class BrowserDriver {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.manage().window().maximize();
             driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
+
         }
     }
-
     public static WebDriver getDriver() {
         return driver;
     }
+
 
     public static void close() {
         if (driver != null) {

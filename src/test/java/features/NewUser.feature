@@ -1,7 +1,13 @@
-Feature: New User View
+Feature: New User
 
-  Scenario: Validate user is able to view after clicking on Registration
-
-    Given User navigates to the Login page
-    When User clicks on new Registration button
-    Then User should be able to view the Registration page
+  Scenario: Successful user registration
+    Given I am on the registration page
+    When I select "Mrs." from Salutions dropdown
+    And I enter "Ana" as first name
+    And I enter "QA" as last name
+    And I enter "ana.qa@qa.com" as email
+    And I enter "666777888" as contact number
+    And I enter "QA" as username
+    And I enter "password123" as password
+    And I click the register button
+    Then I should see the registration success message "User Registered Successfully !!!"

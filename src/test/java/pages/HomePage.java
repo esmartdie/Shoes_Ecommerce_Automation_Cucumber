@@ -6,27 +6,28 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utility.BrowserDriver;
 
 
 import java.time.Duration;
+import java.util.logging.Logger;
 
 public class HomePage {
     private WebDriver driver;
-    private WebDriverWait wait;
 
     @FindBy(xpath="//div[@id='menuToggle']/input")
-    private WebElement hamburgerMenuXpath;
+    private WebElement hamburgerMenu;
 
     @FindBy(xpath="//*[@id='menu']/a/li[text()='Sign In Portal']")
-    private WebElement signInLinkXpath;
+    private WebElement signInLink;
 
     @FindBy(xpath="//*[@id='menu']/a/li[text()='Online Products']")
-    private WebElement onlineProductsXpath;
+    private WebElement onlineProductsLink;
 
     @FindBy(xpath="//*[@id='menu']/a/li[text()='About']")
-    private WebElement about;
+    private WebElement aboutLink;
 
-    @FindBy(xpath = "//font[@id=\"ShoePortalTitle\"]")
+    @FindBy(xpath = "//font[@id='ShoePortalTitle']")
     private WebElement header;
 
     @FindBy(id="MainPageText")
@@ -36,39 +37,36 @@ public class HomePage {
     private WebElement title;
 
     public HomePage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.driver = BrowserDriver.getDriver();
         PageFactory.initElements(driver, this);
     }
 
     public void clickHamburgerMenu() {
-        WebElement hamburgerMenu = wait.until(ExpectedConditions.visibilityOf(hamburgerMenuXpath));
         hamburgerMenu.click();
     }
 
+
     public void clickSignInLink() {
-        WebElement signInLink = wait.until(ExpectedConditions.visibilityOf(signInLinkXpath));
         signInLink.click();
     }
 
     public void clickOnlineProductsLink() {
-        WebElement onlineProductsLink = wait.until(ExpectedConditions.visibilityOf(onlineProductsXpath));
         onlineProductsLink.click();
     }
 
     public void clickAboutLink() {
-        WebElement aboutLink = wait.until(ExpectedConditions.visibilityOf(about));
         aboutLink.click();
     }
 
     public boolean isHeaderDisplayed(String headerText) {
         return header.getText().equals(headerText);
     }
+
     public boolean isMainBannerDisplayed(String bannerText) {
         return mainBanner.getText().equals(bannerText);
     }
+
     public boolean isTitleDisplayed(String webTitle) {
         return driver.getTitle().equals(webTitle);
     }
-
 }
